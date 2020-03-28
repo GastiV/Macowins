@@ -1,0 +1,20 @@
+Decisiones de diseño tomadas para el ejercicio diagnóstico de Macowins.
+
+Aclaraciones:
+Para definir los objetos "Estado" y "metodoPago" se utilizo una clase abstracta y herencia simple.
+El diseño está pensado en Wollok.
+
+Cada item corresponde a un objeto del diagrama de clases.
+
+1) OBJETO MACOWINS
+El objeto representa al sistema en sí, el mismo conoce todas las ventas realizadas representadas en una lista y puede calcular las ganancias a partir de una fecha dada por el usuario.
+
+2)OBJETO VENTA
+Cada venta está representada por un objeto que conoce las prendas que fueron parte de la venta en forma de lista.
+Conoce su fecha y método de pago.
+El método de pago es un objeto que se utiliza para calcular el valor final de la venta (efectivo es el mismo, tarjeta tiene recargo por cantidad de cuotas).
+Para calcular el total de la venta, el objeto depende del objeto metodoPago que espera el total de las ventas (suma del precio de cada prenda)
+
+3)OBJETO PRENDA
+Representa cada prenda del sistema, cada una tiene un precioBase, un tipoPrenda, un estado que es un objeto que se utiliza para calcular el precio de la misma y un método precio que devuelve el valor de la prenda. Este objeto depende del estado para calcular su precio.
+
